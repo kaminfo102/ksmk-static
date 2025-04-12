@@ -14,7 +14,7 @@ export const sliderData: Slide[] = [
     id: 2,
     title: "خدمات ما",
     description: "ما خدمات متنوعی را به مشتریان خود ارائه می‌دهیم. برای اطلاعات بیشتر با ما تماس بگیرید.",
-    imageUrl: "/images/slider/slide2.jpg",
+    imageUrl: "https://uploadkon.ir/uploads/34fa08_25پوستر-برای-نمایندگی.jpg",
     link: "/services",
     createdAt: new Date(),
     updatedAt: new Date()
@@ -23,7 +23,7 @@ export const sliderData: Slide[] = [
     id: 3,
     title: "پروژه‌های موفق ما",
     description: "نمونه‌هایی از پروژه‌های موفق ما که با همکاری مشتریان عزیز انجام شده است.",
-    imageUrl: "/images/slider/slide3.jpg",
+    imageUrl: "https://uploadkon.ir/uploads/222808_250-StarterD.jpg",
     link: "/projects",
     createdAt: new Date(),
     updatedAt: new Date()
@@ -32,7 +32,7 @@ export const sliderData: Slide[] = [
     id: 4,
     title: "تماس با ما",
     description: "برای دریافت اطلاعات بیشتر و مشاوره رایگان، با ما تماس بگیرید.",
-    imageUrl: "/images/slider/slide4.jpg",
+    imageUrl: "https://uploadkon.ir/uploads/ceea08_25Plus2-14-.jpg",
     link: "/contact",
     createdAt: new Date(),
     updatedAt: new Date()

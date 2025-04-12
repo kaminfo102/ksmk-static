@@ -32,7 +32,7 @@ export const mockGalleryItems = [
     id: 1,
     title: "کارگاه برنامه‌نویسی",
     description: "کارگاه عملی برنامه‌نویسی React.js",
-    imageUrl: "/images/gallery/workshop1.jpg",
+    imageUrl: "https://uploadkon.ir/uploads/ceea08_25Plus2-14-.jpg",
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -40,7 +40,7 @@ export const mockGalleryItems = [
     id: 2,
     title: "جشن فارغ‌التحصیلی",
     description: "جشن فارغ‌التحصیلی دانشجویان دوره React.js",
-    imageUrl: "/images/gallery/graduation.jpg",
+    imageUrl: "https://uploadkon.ir/uploads/34fa08_25پوستر-برای-نمایندگی.jpg",
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -48,7 +48,7 @@ export const mockGalleryItems = [
     id: 3,
     title: "مسابقه برنامه‌نویسی",
     description: "مسابقه برنامه‌نویسی سالانه آموزشگاه",
-    imageUrl: "/images/gallery/competition.jpg",
+    imageUrl: "https://uploadkon.ir/uploads/049a08_25IMG-4762.jpg",
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -56,7 +56,7 @@ export const mockGalleryItems = [
     id: 4,
     title: "سخنرانی مهمان",
     description: "سخنرانی متخصصین صنعت در آموزشگاه",
-    imageUrl: "/images/gallery/guest-speaker.jpg",
+    imageUrl: "https://uploadkon.ir/uploads/222808_250-StarterD.jpg",
     createdAt: new Date(),
     updatedAt: new Date()
   }
