@@ -7,22 +7,22 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "آدرس",
-    details: "استان کردستان، سنندج، خیابان پاسداران، مجتمع آموزشی ما"
+    details: "استان کردستان"
   },
   {
     icon: Phone,
     title: "تلفن تماس",
-    details: "۰۸۷-۳۳۲۳۳۳۲۳"
+    details: "087-91002848"
   },
   {
     icon: Mail,
     title: "ایمیل",
-    details: "info@example.com"
+    details: "mirzae.uast@gmail.com"
   },
   {
     icon: Clock,
     title: "ساعات کاری",
-    details: "شنبه تا چهارشنبه - ۸ صبح تا ۸ شب"
+    details: "شنبه تا چهارشنبه - 9 صبح تا 16 "
   }
 ]
 

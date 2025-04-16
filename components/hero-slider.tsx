@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 
-type Slide = {
+export type Slide = {
   id: number
   title: string
   description: string
@@ -25,6 +25,7 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
   const [isAutoplay, setIsAutoplay] = useState(true)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
+  const [aspectRatio, setAspectRatio] = useState(16/9) // Default aspect ratio
   const sliderRef = useRef<HTMLDivElement>(null)
   
   // Minimum swipe distance (in pixels)
@@ -45,8 +46,14 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
   
   const toggleAutoplay = () => setIsAutoplay(!isAutoplay)
 
-  const handleImageLoad = () => {
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
     setIsLoading(false)
+    
+    // Calculate and set the aspect ratio based on the loaded image
+    const img = e.target as HTMLImageElement
+    if (img.naturalWidth && img.naturalHeight) {
+      setAspectRatio(img.naturalWidth / img.naturalHeight)
+    }
   }
   
   // Touch event handlers for swipe functionality
@@ -77,7 +84,11 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
   return (
     <div 
       ref={sliderRef}
-      className="relative w-full h-[180px] xs:h-[220px] sm:h-[320px] md:h-[420px] lg:h-[520px] xl:h-[620px] overflow-hidden"
+      className="relative w-full overflow-hidden dark:bg-black"
+      style={{ 
+        paddingTop: `${(1 / aspectRatio) * 100}%`,
+        maxHeight: "80vh" // Limit maximum height on very tall screens
+      }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={onTouchStart}
@@ -91,45 +102,51 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7 }}
-          className="absolute inset-0"
+          className="absolute inset-0 dark:bg-black"
         >
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-full dark:bg-black">
             {/* Loading skeleton */}
             {isLoading && (
-              <div className="absolute inset-0 bg-muted animate-pulse" />
+              <div className="absolute inset-0 bg-muted animate-pulse dark:bg-gray-800" />
             )}
             
             {/* Image container with fixed aspect ratio */}
-            <div className="absolute inset-0 w-full h-full">
-              <Image
-                src={slides[currentSlide].imageUrl}
-                alt={slides[currentSlide].title}
-                fill
-                sizes="100vw"
-                className={cn(
-                  "object-cover object-center transition-opacity duration-500",
-                  isLoading ? "opacity-0" : "opacity-100"
-                )}
-                priority={currentSlide === 0}
-                quality={90}
-                onLoad={handleImageLoad}
-                style={{ objectPosition: "center center" }}
-              />
+            <div className="absolute inset-0 w-full h-full dark:bg-black">
+              <div className="relative w-full h-full dark:bg-black">
+                <Image
+                  src={slides[currentSlide].imageUrl}
+                  alt={slides[currentSlide].title}
+                  fill
+                  sizes="100vw"
+                  className={cn(
+                    "object-cover object-center transition-opacity duration-500",
+                    isLoading ? "opacity-0" : "opacity-100",
+                    "dark:opacity-100" // Ensure image is visible in dark mode
+                  )}
+                  priority={currentSlide === 0}
+                  quality={90}
+                  onLoad={handleImageLoad}
+                  style={{ 
+                    objectPosition: "center center",
+                    filter: "brightness(1)" // Ensure proper brightness in dark mode
+                  }}
+                />
+              </div>
             </div>
             
-            {/* Enhanced gradient overlay with better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80" />
+            {/* Enhanced gradient overlay with better text readability - stronger at bottom */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/80 dark:from-black/40 dark:via-black/30 dark:to-black/90" />
           </div>
           
-          {/* Content container with improved positioning */}
-          <div className="absolute inset-0 flex items-center justify-center p-3 xs:p-4 sm:p-5 md:p-6">
+          {/* Content container positioned at the bottom */}
+          <div className="absolute bottom-0 left-0 right-0 p-3 xs:p-4 sm:p-5 md:p-6">
             <div className="container mx-auto max-w-5xl">
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 20, opacity: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="space-y-2 xs:space-y-3 sm:space-y-4 text-center"
+                className="space-y-2 xs:space-y-3 sm:space-y-4"
               >
                 <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white drop-shadow-md">
                   {slides[currentSlide].title}

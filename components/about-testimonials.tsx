@@ -7,21 +7,21 @@ import { Quote } from "lucide-react"
 const testimonials = [
   {
     name: "امیر حسینی",
-    role: "دانشجوی دوره React.js",
-    image: "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=2070",
-    quote: "کیفیت آموزش‌ها عالی بود و تونستم خیلی سریع وارد بازار کار بشم."
+    role: "",
+    image: "/images/logo/logo.jpg",
+    quote: "کیفیت آموزش‌ها عالی بود و مربیان خیلی خوب بودند."
   },
   {
     name: "مریم اکبری",
-    role: "دانشجوی دوره UI/UX",
+    role: "",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070",
-    quote: "پشتیبانی و راهنمایی اساتید فوق‌العاده بود."
+    quote: "پشتیبانی و راهنمایی فوق‌العاده بود."
   },
   {
     name: "رضا محمدی",
-    role: "دانشجوی دوره Python",
+    role: "",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2070",
-    quote: "پروژه‌های عملی دوره کمک زیادی به یادگیری من کرد."
+    quote: "همه چی عالیه"
   }
 ]
 
@@ -30,9 +30,9 @@ export function AboutTestimonials() {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">نظرات دانشجویان</h2>
+          <h2 className="text-3xl font-bold mb-4">نظرات اولیاء</h2>
           <p className="text-muted-foreground">
-            آنچه دانشجویان ما درباره دوره‌های آموزشی می‌گویند
+            آنچه اولیاء فراگیران ما درباره دوره‌های آموزشی می‌گویند
           </p>
         </div>
 

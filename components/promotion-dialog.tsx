@@ -30,32 +30,32 @@ export function PromotionDialog() {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl">مسابقه برنامه‌نویسی ۱۴۰۳</DialogTitle>
+          <DialogTitle className="text-2xl">مسابقه آنلاین محاسبات ذهنی با چرتکه</DialogTitle>
           <DialogDescription>
-            فرصت ویژه برای علاقه‌مندان به برنامه‌نویسی
+            فرصت ویژه برای همه فراگیرانی که در هر موسسه ای چرتکه رو یاد گرفتن باشن.
           </DialogDescription>
         </DialogHeader>
         <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
           <Image
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070"
-            alt="مسابقه برنامه‌نویسی"
+            src="/festival_dialog.jpg"
+            alt="مسابقه محاسبات ذهنی با چرتکه استان کردستان"
             fill
             className="object-cover"
           />
         </div>
         <div className="space-y-4">
           <p className="text-muted-foreground">
-            در مسابقه بزرگ برنامه‌نویسی ما شرکت کنید و از جوایز ارزنده بهره‌مند شوید.
-            این فرصتی عالی برای محک زدن مهارت‌های شماست.
+            در مسابقه بزرگ محاسبات ذهنی با چرتکه شرکت کنید و از جوایز ارزنده بهره‌مند شوید.
+            این فرصتی عالی برای محک زدن خودتونه.
           </p>
           <ul className="space-y-2">
             <li className="flex items-center">
               <span className="bg-primary/10 text-primary rounded-full p-1 ml-2">✓</span>
-              جوایز نقدی ارزنده
+              جوایز ارزنده
             </li>
             <li className="flex items-center">
               <span className="bg-primary/10 text-primary rounded-full p-1 ml-2">✓</span>
-              فرصت همکاری با شرکت‌های معتبر
+              حضور در مسابقات ملی و بین المللی
             </li>
             <li className="flex items-center">
               <span className="bg-primary/10 text-primary rounded-full p-1 ml-2">✓</span>

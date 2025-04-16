@@ -5,7 +5,7 @@ import { AboutTeam } from "@/components/about-team"
 import { AboutTestimonials } from "@/components/about-testimonials"
 
 export const metadata: Metadata = {
-  title: "درباره ما | آموزشگاه ما",
+  title: "درباره ما | کودکان هوشمند کردستان",
   description: "درباره آموزشگاه ما و خدمات آموزشی ما"
 }
 
@@ -14,7 +14,7 @@ export default function AboutPage() {
     <div className="pt-16">
       <AboutHero />
       <AboutFeatures />
-      <AboutTeam />
+      {/* <AboutTeam /> */}
       <AboutTestimonials />
     </div>
   )

@@ -2,25 +2,25 @@
 export const mockCourses = [
   {
     id: 1,
-    title: "دوره برنامه‌نویسی React.js",
-    summary: "یادگیری React.js از مقدماتی تا پیشرفته",
-    imageUrl: "https://uploadkon.ir/uploads/13b808_252-Elemantary1.jpg",
+    title: "آموزش محاسبات ذهنی",
+    summary: "آموزش محاسبات ذهنی از مقدماتی تا پیشرفته",
+    imageUrl: "https://uploadkon.ir/uploads/d8b208_25چرتکه-دانش-آموز.png",
     views: 1250,
     likes: 87
   },
   {
     id: 2,
-    title: "دوره طراحی وب با HTML و CSS",
-    summary: "یادگیری اصول طراحی وب و CSS پیشرفته",
-    imageUrl: "/images/courses/html-css.jpg",
+    title: "دوره های رباتیک و اینترنت اشیاء",
+    summary: "آموزش برنامه نویسی رباتیک و اینترنت اشیاء",
+    imageUrl: "https://uploadkon.ir/uploads/34fa08_25پوستر-برای-نمایندگی.jpg",
     views: 980,
     likes: 65
   },
   {
     id: 3,
-    title: "دوره برنامه‌نویسی Node.js",
-    summary: "ساخت اپلیکیشن‌های سمت سرور با Node.js",
-    imageUrl: "/images/courses/nodejs.jpg",
+    title: "دوره برنامه‌نویسی پایتون ویژه کودکان و نوجوانان",
+    summary: "آموزش برنامه‌نویسی پایتون با مثال‌های عملی و کاربردی",
+    imageUrl: "/python.jpg",
     views: 1100,
     likes: 72
   }

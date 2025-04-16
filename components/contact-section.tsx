@@ -98,7 +98,7 @@ export function ContactSection() {
         description: (
           <div className="mt-2 flex items-center text-green-600 dark:text-green-400 text-sm">
             <CheckCircle2 className="h-4 w-4 ml-2" />
-            <span>در اسرع وقت با شما تماس خواهیم گرفت</span>
+            <span>پیام شما با موفقیت ارسال شد و در اسرع وقت با شما تماس خواهیم گرفت</span>
           </div>
         ),
       })
@@ -154,7 +154,7 @@ export function ContactSection() {
                 <div>
                   <h3 className="font-semibold mb-2">آدرس</h3>
                   <p className="text-muted-foreground">
-                    استان کردستان، سنندج، خیابان پاسداران، مجتمع آموزشی ما
+                    استان کردستان
                   </p>
                 </div>
               </motion.div>
@@ -171,7 +171,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">تلفن تماس</h3>
-                  <p className="text-muted-foreground">۰۸۷-۳۳۲۳۳۳۲۳</p>
+                  <p className="text-muted-foreground">087-91002848</p>
                 </div>
               </motion.div>
 
@@ -187,7 +187,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">ایمیل</h3>
-                  <p className="text-muted-foreground">info@example.com</p>
+                  <p className="text-muted-foreground">mirzae.uast@gmail.com</p>
                 </div>
               </motion.div>
             </div>
@@ -260,48 +260,50 @@ export function ContactSection() {
                     />
                   </div>
 
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>شماره موبایل</FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="۰۹۱۲۳۴۵۶۷۸۹" 
-                            {...field}
-                            className="transition-all duration-200 focus:scale-[1.02]"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="city"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>شهر</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>شماره موبایل</FormLabel>
                           <FormControl>
-                            <SelectTrigger className="transition-all duration-200 focus:scale-[1.02]">
-                              <SelectValue placeholder="شهر خود را انتخاب کنید" />
-                            </SelectTrigger>
+                            <Input 
+                              placeholder="۰۹۱۲۳۴۵۶۷۸۹" 
+                              {...field}
+                              className="transition-all duration-200 focus:scale-[1.02]"
+                            />
                           </FormControl>
-                          <SelectContent>
-                            {kurdistanCities.map((city) => (
-                              <SelectItem key={city} value={city}>
-                                {city}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="city"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>شهر</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="transition-all duration-200 focus:scale-[1.02]">
+                                <SelectValue placeholder="شهر خود را انتخاب کنید" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {kurdistanCities.map((city) => (
+                                <SelectItem key={city} value={city}>
+                                  {city}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
 
                   <FormField
                     control={form.control}
@@ -310,9 +312,9 @@ export function ContactSection() {
                       <FormItem>
                         <FormLabel>پیام</FormLabel>
                         <FormControl>
-                          <Textarea
-                            placeholder="پیام خود را بنویسید"
-                            className="min-h-[120px] transition-all duration-200 focus:scale-[1.02]"
+                          <Textarea 
+                            placeholder="پیام خود را وارد کنید" 
+                            className="min-h-[120px] transition-all duration-200 focus:scale-[1.01]"
                             {...field}
                           />
                         </FormControl>
@@ -323,7 +325,7 @@ export function ContactSection() {
 
                   <Button 
                     type="submit" 
-                    className="w-full transition-all duration-200 hover:scale-[1.02]" 
+                    className="w-full" 
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "در حال ارسال..." : "ارسال پیام"}
