@@ -37,8 +37,8 @@ export async function POST(request: Request) {
 
     // Send email notification
     const mailOptions = {
-      from: process.env.SMTP_USER || 'mirzae.uast@gmail.com',
-      to: process.env.SMTP_USER || 'mirzae.uast@gmail.com',
+      from: process.env.SMTP_USER,
+      to: process.env.SMTP_USER,
       subject: `ثبت‌نام جدید در جشنواره - ${firstName} ${lastName}`,
       html: `
         <!DOCTYPE html>
@@ -60,29 +60,30 @@ export async function POST(request: Request) {
               margin: 0 auto;
               padding: 20px;
               background-color: #ffffff;
-              border-radius: 10px;
-              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+              border-radius: 8px;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
             .header {
-              background-color: #dc2626;
+              background-color: #4f46e5;
               color: white;
               padding: 20px;
-              border-radius: 10px 10px 0 0;
               text-align: center;
+              border-radius: 8px 8px 0 0;
             }
             .content {
               padding: 20px;
+              background-color: #ffffff;
             }
             .info-item {
               margin-bottom: 15px;
               padding: 10px;
-              background-color: #f9f9f9;
-              border-radius: 5px;
-              border-right: 3px solid #dc2626;
+              background-color: #f8f9fa;
+              border-radius: 4px;
+              border-right: 4px solid #4f46e5;
             }
             .info-label {
               font-weight: bold;
-              color: #dc2626;
+              color: #4f46e5;
               margin-bottom: 5px;
             }
             .info-value {
@@ -91,65 +92,75 @@ export async function POST(request: Request) {
             .footer {
               text-align: center;
               padding: 20px;
+              background-color: #f8f9fa;
+              border-radius: 0 0 8px 8px;
               color: #666;
-              font-size: 0.9em;
-              border-top: 1px solid #eee;
-              margin-top: 20px;
+              font-size: 14px;
             }
-            .message-box {
-              background-color: #f0f9ff;
-              border: 1px solid #bae6fd;
-              border-radius: 5px;
-              padding: 15px;
+            .button {
+              display: inline-block;
+              padding: 10px 20px;
+              background-color: #4f46e5;
+              color: white;
+              text-decoration: none;
+              border-radius: 4px;
               margin-top: 20px;
-            }
-            .message-label {
-              color: #0369a1;
-              font-weight: bold;
-              margin-bottom: 5px;
             }
           </style>
         </head>
         <body>
           <div class="container">
             <div class="header">
-              <h1>ثبت‌نام جدید در جشنواره</h1>
+              <h1 style="margin: 0;">ثبت‌نام جدید در جشنواره محاسبات ذهنی</h1>
             </div>
             <div class="content">
+              <p>سلام،</p>
+              <p>یک ثبت‌نام جدید در جشنواره محاسبات ذهنی انجام شده است. جزئیات ثبت‌نام به شرح زیر است:</p>
+              
               <div class="info-item">
                 <div class="info-label">نام و نام خانوادگی</div>
                 <div class="info-value">${firstName} ${lastName}</div>
               </div>
+              
               <div class="info-item">
-                <div class="info-label">شماره موبایل</div>
+                <div class="info-label">شماره تماس</div>
                 <div class="info-value">${phone}</div>
               </div>
+              
               <div class="info-item">
                 <div class="info-label">کد ملی</div>
                 <div class="info-value">${code_meli}</div>
               </div>
+              
               <div class="info-item">
                 <div class="info-label">شهر</div>
                 <div class="info-value">${city}</div>
               </div>
+              
               <div class="info-item">
                 <div class="info-label">سطح مهارت</div>
                 <div class="info-value">${level}</div>
               </div>
+              
               ${message ? `
-                <div class="message-box">
-                  <div class="message-label">پیام</div>
-                  <div class="info-value">${message}</div>
-                </div>
+              <div class="info-item">
+                <div class="info-label">پیام</div>
+                <div class="info-value">${message}</div>
+              </div>
               ` : ''}
+              
               <div class="info-item">
                 <div class="info-label">تاریخ ثبت‌نام</div>
                 <div class="info-value">${new Date().toLocaleDateString('fa-IR')}</div>
               </div>
+              
+              <div style="text-align: center; margin-top: 20px;">
+                <a href="${process.env.NEXT_PUBLIC_APP_URL}/registrations" class="button">مشاهده لیست ثبت‌نام‌ها</a>
+              </div>
             </div>
             <div class="footer">
-              <p>این ایمیل به صورت خودکار ارسال شده است.</p>
-              <p>کودکان هوشمند کردستان</p>
+              <p>این ایمیل به صورت خودکار ارسال شده است. لطفاً به آن پاسخ ندهید.</p>
+              <p>© ${new Date().getFullYear()} کودکان هوشمند کردستان. تمامی حقوق محفوظ است.</p>
             </div>
           </div>
         </body>
