@@ -7,8 +7,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASSWORD,
+    user: process.env.SMTP_USER || 'mirzae.uast@gmail.com',
+    pass: process.env.SMTP_PASSWORD || 'uejh ggpb nxwy fvrx',
   },
   tls: {
     rejectUnauthorized: false,
