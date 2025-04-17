@@ -3,6 +3,7 @@ import { PromotionDialog } from "@/components/promotion-dialog"
 import { FAQSection } from "@/components/faq-section"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { HeroSection } from "@/components/hero-section"
+import ImageGallery from "@/components/gallery"
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       
       
       <FAQSection />
+      <ImageGallery />
       <ContactSection />
       <PromotionDialog />
       

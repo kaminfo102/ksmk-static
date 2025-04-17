@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import { GalleryGrid } from "@/components/gallery-grid"
 import { mockGalleryItems } from "@/data/mock-data"
-
+import ImageGallery from "@/components/gallery"
 export const metadata: Metadata = {
   title: "گالری تصاویر | آموزشگاه ما",
   description: "گالری تصاویر و لحظات به یاد ماندنی آموزشگاه ما"
@@ -19,6 +19,7 @@ export default function GalleryPage() {
         </div>
       </div>
       <GalleryGrid items={mockGalleryItems} />
+      <ImageGallery />
     </div>
   )
 }
