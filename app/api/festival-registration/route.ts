@@ -25,15 +25,15 @@ export async function POST(request: Request) {
     const { firstName, lastName, phone, code_meli, city, level, message } = body;
 
     // Save registration to file
-    const registration = saveRegistration({
-      firstName,
-      lastName,
-      phone,
-      code_meli,
-      city,
-      level,
-      message,
-    });
+    // const registration = saveRegistration({
+    //   firstName,
+    //   lastName,
+    //   phone,
+    //   code_meli,
+    //   city,
+    //   level,
+    //   message,
+    // });
 
     // Send email notification
     const mailOptions = {

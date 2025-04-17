@@ -21,13 +21,13 @@ export async function POST(request: Request) {
     const { firstName, lastName, phone, city, message } = body;
 
     // Save message to file
-    await saveMessage({
-      firstName,
-      lastName,
-      phone,
-      city,
-      message,
-    });
+    // await saveMessage({
+    //   firstName,
+    //   lastName,
+    //   phone,
+    //   city,
+    //   message,
+    // });
 
     // Send email
     await transporter.sendMail({
