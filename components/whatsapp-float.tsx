@@ -13,7 +13,7 @@ export function WhatsAppFloat() {
       aria-label="ارتباط با ما از طریق واتس‌اپ"
     >
       <MessageCircle className="w-6 h-6" />
-      <span className="text-sm font-medium">تماس با ما</span>
+      <span className="text-sm font-medium">ارتباط از طریق واتس‌اپ</span>
     </Link>
   )
 } 

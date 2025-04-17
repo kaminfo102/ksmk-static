@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { GalleryGrid } from "@/components/gallery-grid"
 import { mockGalleryItems } from "@/data/mock-data"
 import ImageGallery from "@/components/gallery"
+import { WhatsAppFloat } from "@/components/whatsapp-float"
 export const metadata: Metadata = {
   title: "گالری تصاویر | آموزشگاه ما",
   description: "گالری تصاویر و لحظات به یاد ماندنی آموزشگاه ما"
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <div className="pt-16">
+      <WhatsAppFloat />
       <div className="bg-muted/30 py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4">گالری تصاویر</h1>

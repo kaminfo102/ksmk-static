@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { CoursesSection } from '@/components/courses-section'
 import { mockCourses } from '@/data/mock-data'
-
+import { WhatsAppFloat } from '@/components/whatsapp-float'
 export const metadata: Metadata = {
   title: 'دوره‌های آموزشی',
   description: 'لیست دوره‌های آموزشی آموزشگاه ما'
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function CoursesPage() {
   return (
     <div className="pt-16">
+      <WhatsAppFloat />
       <div className="bg-muted/30 py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4">دوره‌های آموزشی</h1>

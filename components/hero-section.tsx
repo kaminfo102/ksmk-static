@@ -81,7 +81,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
             >
-              <Link href="/courses">
+              <Link href="/festival-guide">
                 <Button size="lg" className="w-full sm:w-auto">
                   اطلاعات بیشتر و ثبت نام
                 </Button>
