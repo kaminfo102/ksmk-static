@@ -192,7 +192,7 @@ export default function FestivalGuidePage() {
           </section>
 
           {/* Gallery Section */}
-          <section>
+          {/* <section>
             <h2 className="text-2xl font-bold mb-4 flex items-center">
               <span className="bg-primary/10 text-primary rounded-full p-2 mr-3">4</span>
               گالری تصاویر
@@ -223,7 +223,7 @@ export default function FestivalGuidePage() {
                 />
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* FAQ */}
           <section>

@@ -34,10 +34,23 @@ const formSchema = z.object({
       const englishNumber = val.replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d).toString());
       return /^09\d{9}$/.test(englishNumber);
     }, "شماره موبایل باید با ۰۹ شروع شود"),
-  email: z.string().email("ایمیل معتبر نیست"),
+  code_meli: z.string().regex(/^[۰-۹0-9]{10}$/, "کد ملی باید ۱۰ رقم باشد")
+    .refine((val) => {
+      // Convert Persian numbers to English
+      const englishNumber = val.replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d).toString());
+      // Iranian National ID validation algorithm
+      if (!/^\d{10}$/.test(englishNumber)) return false;
+      
+      const check = parseInt(englishNumber[9]);
+      let sum = 0;
+      for (let i = 0; i < 9; i++) {
+        sum += parseInt(englishNumber[i]) * (10 - i);
+      }
+      const remainder = sum % 11;
+      return (remainder < 2 && check === remainder) || (remainder >= 2 && check === 11 - remainder);
+    }, "کد ملی وارد شده معتبر نیست"),
   city: z.string().min(1, "لطفاً شهر خود را انتخاب کنید"),
-  level: z.string().min(1, "لطفاً سطح مهارت خود را انتخاب کنید"),
-  experience: z.string().min(1, "لطفاً سابقه یادگیری خود را انتخاب کنید"),
+  level: z.string().min(1, "لطفاً سطح مهارت خود را وارد کنید"),
   message: z.string().optional(),
 });
 
@@ -54,21 +67,6 @@ const kurdistanCities = [
   "سروآباد",
 ];
 
-const abacusLevels = [
-  "مقدماتی",
-  "پایه",
-  "متوسط",
-  "پیشرفته",
-  "حرفه‌ای",
-];
-
-const experienceLevels = [
-  "کمتر از ۶ ماه",
-  "۶ ماه تا ۱ سال",
-  "۱ تا ۲ سال",
-  "۲ تا ۳ سال",
-  "بیش از ۳ سال",
-];
 
 export function FestivalRegistrationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -80,10 +78,9 @@ export function FestivalRegistrationForm() {
       firstName: "",
       lastName: "",
       phone: "",
-      email: "",
       city: "",
       level: "",
-      experience: "",
+      code_meli: "",
       message: "",
     },
   });
@@ -91,9 +88,19 @@ export function FestivalRegistrationForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      // Here you would typically send the data to your API
-      // For now, we'll just simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await fetch('/api/festival-registration', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'خطا در ثبت‌نام');
+      }
       
       setIsSuccess(true);
       form.reset();
@@ -209,16 +216,15 @@ export function FestivalRegistrationForm() {
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
-              name="email"
+              name="code_meli"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>ایمیل</FormLabel>
+                  <FormLabel>کد ملی</FormLabel>
                   <FormControl>
                     <Input 
-                      placeholder="example@email.com" 
+                      placeholder="۱۲۳۴۵۶۷۸۹۰" 
                       {...field}
                       className="transition-all duration-200 focus:scale-[1.02]"
                     />
@@ -261,50 +267,18 @@ export function FestivalRegistrationForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>سطح مهارت</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger className="transition-all duration-200 focus:scale-[1.02]">
-                        <SelectValue placeholder="سطح مهارت خود را انتخاب کنید" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {abacusLevels.map((level) => (
-                        <SelectItem key={level} value={level}>
-                          {level}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <FormControl>
+                    <Input 
+                      placeholder="سطح مهارت خود را وارد کنید" 
+                      {...field}
+                      className="transition-all duration-200 focus:scale-[1.02]"
+                    />
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
           </div>
-
-          <FormField
-            control={form.control}
-            name="experience"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>سابقه یادگیری</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="transition-all duration-200 focus:scale-[1.02]">
-                      <SelectValue placeholder="سابقه یادگیری خود را انتخاب کنید" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {experienceLevels.map((level) => (
-                      <SelectItem key={level} value={level}>
-                        {level}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
 
           <FormField
             control={form.control}
