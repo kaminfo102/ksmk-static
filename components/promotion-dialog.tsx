@@ -11,6 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function PromotionDialog() {
   const [isOpen, setIsOpen] = useState(false)
@@ -68,9 +69,11 @@ export function PromotionDialog() {
             <Button variant="outline" onClick={() => setIsOpen(false)} className="w-full sm:w-auto">
               بعداً یادآوری کن
             </Button>
+            <Link href="/festival-guide">
             <Button className="w-full sm:w-auto">
               ثبت‌نام در مسابقه
             </Button>
+            </Link>
           </div>
         </div>
       </DialogContent>

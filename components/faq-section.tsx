@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from "./ui/button"
+import Link from "next/link"
 
 const faqs = [
   {
@@ -16,7 +17,7 @@ const faqs = [
   },
   {
     question: "در طول اجرای مسابقه مشکلات و سوالاتم رو از کی میتونم بپرسم؟",
-    answer: "شما می‌تونید از طریق پشتیبانی آنلاین یا تماس از طریق تلفن 087-91002848 و ارتباط از طریق واتساپ با تیم ما در ارتباط باشید."
+    answer: "شما می‌تونید از طریق پشتیبانی آنلاین یا تماس از طریق تلفن  91002848-087 و ارتباط از طریق واتساپ با تیم ما در ارتباط باشید."
   },
   {
     question: "مسابقه چطور برگزار میشه؟",
@@ -66,9 +67,11 @@ export function FAQSection() {
             viewport={{ once: true }}
             className="text-center mt-8"
           >
+            <Link href="/festival-guide">
             <Button variant="outline" size="lg">
               سوالات بیشتر
             </Button>
+            </Link>
           </motion.div>
         </div>
       </div>

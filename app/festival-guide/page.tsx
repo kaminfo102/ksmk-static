@@ -41,10 +41,10 @@ export default function FestivalGuidePage() {
           <Card>
             <CardHeader className="pb-2">
               <Calendar className="h-5 w-5 text-primary mb-2" />
-              <CardTitle className="text-lg">تاریخ مسابقه</CardTitle>
+              <CardTitle className="text-lg">تاریخ ثبت نام</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>۱۵ خرداد ۱۴۰۳</CardDescription>
+              <CardDescription>از 1  تا 12 اردیبهشت 1404</CardDescription>
             </CardContent>
           </Card>
           <Card>
@@ -71,7 +71,7 @@ export default function FestivalGuidePage() {
               <CardTitle className="text-lg">سطح مسابقه</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>استانی و ملی</CardDescription>
+              <CardDescription>سطح مسابقه استانی می باشد و نفرات برتر برای مسابقات ملی و بین المللی انتخاب می شوند</CardDescription>
             </CardContent>
           </Card>
         </div>
@@ -107,14 +107,14 @@ export default function FestivalGuidePage() {
                   <h3 className="font-bold text-lg mb-2">مرحله اول: آزمون آنلاین</h3>
                   <p className="text-muted-foreground">
                     در این مرحله، شرکت‌کنندگان در یک آزمون آنلاین شرکت می‌کنند که شامل سوالات محاسباتی با چرتکه است.
-                    این آزمون در تاریخ ۱۵ خرداد ۱۴۰۳ برگزار می‌شود.
+                    
                   </p>
                 </div>
                 <div className="border-r-4 border-primary pr-4">
                   <h3 className="font-bold text-lg mb-2">مرحله دوم: مسابقه نهایی</h3>
                   <p className="text-muted-foreground">
                     شرکت‌کنندگان برتر از مرحله اول، به مسابقه نهایی که به صورت حضوری برگزار می‌شود، راه می‌یابند.
-                    تاریخ مسابقه نهایی متعاقباً اعلام خواهد شد.
+                    
                   </p>
                 </div>
               </div>
@@ -137,10 +137,12 @@ export default function FestivalGuidePage() {
                   <CardDescription>راهنمای کامل برای شرکت در مسابقه</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full">
-                    <Download className="h-4 w-4 ml-2" />
-                    دانلود PDF
-                  </Button>
+                  <Link href="/pdf/1.pdf" download className="w-full">
+                    <Button variant="outline" className="w-full">
+                      <Download className="h-4 w-4 ml-2" />
+                      دانلود PDF
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
               <Card>
@@ -152,10 +154,12 @@ export default function FestivalGuidePage() {
                   <CardDescription>نمونه سوالات مسابقات قبلی</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full">
-                    <Download className="h-4 w-4 ml-2" />
-                    دانلود PDF
-                  </Button>
+                  <Link href="/pdf/2.pdf" download className="w-full">
+                    <Button variant="outline" className="w-full">
+                      <Download className="h-4 w-4 ml-2" />
+                      دانلود PDF
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
               <Card>
@@ -167,10 +171,12 @@ export default function FestivalGuidePage() {
                   <CardDescription>مقررات و قوانین شرکت در مسابقه</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full">
-                    <Download className="h-4 w-4 ml-2" />
-                    دانلود PDF
-                  </Button>
+                  <Link href="/pdf/3.pdf" download className="w-full">
+                    <Button variant="outline" className="w-full">
+                      <Download className="h-4 w-4 ml-2" />
+                      دانلود PDF
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
               <Card>
@@ -182,10 +188,12 @@ export default function FestivalGuidePage() {
                   <CardDescription>جدول زمانی دقیق مراحل مسابقه</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full">
-                    <Download className="h-4 w-4 ml-2" />
-                    دانلود PDF
-                  </Button>
+                  <Link href="/pdf/4.pdf" download className="w-full">
+                    <Button variant="outline" className="w-full">
+                      <Download className="h-4 w-4 ml-2" />
+                      دانلود PDF
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </div>

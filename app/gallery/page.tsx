@@ -20,7 +20,7 @@ export default function GalleryPage() {
           </p>
         </div>
       </div>
-      <GalleryGrid items={mockGalleryItems} />
+      {/* <GalleryGrid items={mockGalleryItems} /> */}
       <ImageGallery />
     </div>
   )
