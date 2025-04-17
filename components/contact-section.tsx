@@ -43,7 +43,12 @@ const kurdistanCities = [
 const formSchema = z.object({
   firstName: z.string().min(2, "نام باید حداقل ۲ حرف باشد"),
   lastName: z.string().min(2, "نام خانوادگی باید حداقل ۲ حرف باشد"),
-  phone: z.string().regex(/^09\d{9}$/, "شماره موبایل معتبر نیست"),
+  phone: z.string().regex(/^[۰-۹0-9]{11}$/, "شماره موبایل معتبر نیست")
+    .refine((val) => {
+      // Convert Persian numbers to English
+      const englishNumber = val.replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d).toString());
+      return /^09\d{9}$/.test(englishNumber);
+    }, "شماره موبایل باید با ۰۹ شروع شود"),
   city: z.string().min(1, "لطفاً شهر خود را انتخاب کنید"),
   message: z.string().min(10, "پیام باید حداقل ۱۰ حرف باشد"),
 })
