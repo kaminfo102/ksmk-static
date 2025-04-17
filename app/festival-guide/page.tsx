@@ -236,7 +236,7 @@ export default function FestivalGuidePage() {
           {/* FAQ */}
           <section>
             <h2 className="text-2xl font-bold mb-4 flex items-center">
-              <span className="bg-primary/10 text-primary rounded-full p-2 mr-3">5</span>
+              <span className="bg-primary/10 text-primary rounded-full p-2 mr-3">4</span>
               سوالات متداول
             </h2>
             <div className="space-y-4">
@@ -249,13 +249,13 @@ export default function FestivalGuidePage() {
               <div className="border rounded-lg p-4">
                 <h3 className="font-bold mb-2">هزینه ثبت‌نام چقدر است؟</h3>
                 <p className="text-muted-foreground">
-                  هزینه ثبت‌نام برای هر شرکت‌کننده ۵۰۰,۰۰۰ ریال است که شامل هزینه برگزاری مسابقه و گواهینامه شرکت می‌شود.
+                  هزینه ثبت‌نام برای هر شرکت‌کننده 970000 ریال است که شامل هزینه برگزاری مسابقه و گواهینامه شرکت می‌شود.
                 </p>
               </div>
               <div className="border rounded-lg p-4">
                 <h3 className="font-bold mb-2">آیا نیاز به تجهیزات خاصی دارم؟</h3>
                 <p className="text-muted-foreground">
-                  برای مرحله اول (آزمون آنلاین)، شما به یک کامپیوتر یا تبلت با اتصال به اینترنت نیاز دارید.
+                  برای مرحله اول (آزمون آنلاین)، شما به یک کامپیوتر یا تبلت یا موبایل با اتصال به اینترنت نیاز دارید.
                 </p>
               </div>
             </div>
