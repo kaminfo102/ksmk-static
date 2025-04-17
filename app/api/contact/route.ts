@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { saveMessage } from '@/data/contact-messages';
+// import { saveMessage } from '@/data/contact-messages';
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',

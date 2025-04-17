@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { saveRegistration } from '@/data/festival-registrations';
+// import { saveRegistration } from '@/data/festival-registrations';
 
 const transporter = nodemailer.createTransport({
 //   service: 'gmail',
@@ -162,7 +162,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ 
       success: true, 
       message: 'ثبت‌نام با موفقیت انجام شد',
-      registration 
+      // registration 
     });
   } catch (error) {
     console.error('Error in festival registration:', error);
