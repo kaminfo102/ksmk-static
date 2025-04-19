@@ -22,10 +22,11 @@ export default function FestivalGuidePage() {
         {/* Hero Image */}
         <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-12">
           <Image
-            src="/festival_dialog.jpg"
+            src="/fesival-dialog.jpg"
             alt="جشنواره و مسابقه محاسبات ذهنی با چرتکه"
             fill
             className="object-cover"
+            sizes="(max-width: 640px) 90vw, (max-width: 768px) 700px, 800px"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">

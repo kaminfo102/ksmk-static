@@ -38,7 +38,7 @@ export function PromotionDialog() {
         </DialogHeader>
         <div className="relative aspect-video rounded-lg overflow-hidden my-4 sm:my-6">
           <Image
-            src="/festival_dialog.jpg"
+            src="/fesival-dialog.jpg"
             alt="مسابقه محاسبات ذهنی با چرتکه استان کردستان"
             fill
             className="object-cover"
