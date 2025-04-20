@@ -63,7 +63,8 @@ export function CoursesSection({ courses }: { courses: Course[] }) {
                       <span>{course.likes}</span>
                     </div>
                   </div>
-                  <Link href={`/courses/${course.id}`}>
+                  {/* <Link href={`/courses/${course.id}`}> */}
+                  <Link href={``}>
                     <Button>مشاهده دوره</Button>
                   </Link>
                 </CardFooter>
