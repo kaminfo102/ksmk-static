@@ -141,6 +141,8 @@ export function ContactSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">تماس با ما</h2>
           <p className="text-muted-foreground">ما همیشه آماده پاسخگویی به شما هستیم</p>
+          <p className="text-muted-foreground">            اگر موفق به تماس نشدید پیام ارسال کنید در اولین فرصت با شما تماس میگیریم
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

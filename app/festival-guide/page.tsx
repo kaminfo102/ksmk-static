@@ -16,25 +16,28 @@ export default function FestivalGuidePage() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">راهنمای شرکت در جشنواره و مسابقه</h1>
         <p className="text-muted-foreground text-center mb-12">
-          اطلاعات کامل برای شرکت در جشنواره و مسابقه محاسبات ذهنی با چرتکه
+        📣 با افتخار اعلام می‌کنیم:
+اولین جشنواره و مسابقات آنلاین استانی محاسبات ذهنی با چرتکه توسط مؤسسه کودکان هوشمند در استان کردستان برگزار می‌شود!
+
+این رویداد برای نخستین بار به صورت کاملاً آنلاین و با هدف کشف استعدادها، تقویت مهارت‌های ذهنی کودکان و نوجوانان و ایجاد رقابتی سالم میان شرکت‌کنندگان سراسر استان طراحی شده است.
         </p>
 
         {/* Hero Image */}
-        <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-12">
+        <div className="relative w-full h-auto aspect-[16/9] rounded-xl overflow-hidden mb-12">
           <Image
             src="/fesival-dialog.jpg"
             alt="جشنواره و مسابقه محاسبات ذهنی با چرتکه"
             fill
-            className="object-cover"
+            className="object-contain"
             sizes="(max-width: 640px) 90vw, (max-width: 768px) 700px, 800px"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
             <div className="text-white">
               <h2 className="text-2xl md:text-3xl font-bold mb-2">مسابقه آنلاین محاسبات ذهنی با چرتکه</h2>
               <p className="text-lg">فرصتی برای نمایش مهارت‌های شما</p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Quick Info Cards */}
@@ -138,7 +141,7 @@ export default function FestivalGuidePage() {
                   <CardDescription>راهنمای کامل برای شرکت در مسابقه</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Link href="/pdf/1.pdf" download className="w-full">
+                  <Link href="/pdf/festival-help.pdf" download className="w-full">
                     <Button variant="outline" className="w-full">
                       <Download className="h-4 w-4 ml-2" />
                       دانلود PDF
@@ -155,15 +158,18 @@ export default function FestivalGuidePage() {
                   <CardDescription>نمونه سوالات مسابقات قبلی</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Link href="/pdf/2.pdf" download className="w-full">
-                    <Button variant="outline" className="w-full">
+                  <p>
+                    نمونه سوالات بر اساس سطح فراگیر برای شما ارسال می شود
+                  </p>
+                  
+                    {/* <Button variant="outline" className="w-full">
                       <Download className="h-4 w-4 ml-2" />
-                      دانلود PDF
-                    </Button>
-                  </Link>
+                      دانلود نمونه سوالات
+                    </Button> */}
+                  
                 </CardContent>
               </Card>
-              <Card>
+              {/* <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <FileText className="h-5 w-5 text-primary ml-2" />
@@ -179,8 +185,8 @@ export default function FestivalGuidePage() {
                     </Button>
                   </Link>
                 </CardContent>
-              </Card>
-              <Card>
+              </Card> */}
+              {/* <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <FileText className="h-5 w-5 text-primary ml-2" />
@@ -196,7 +202,7 @@ export default function FestivalGuidePage() {
                     </Button>
                   </Link>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
           </section>
 

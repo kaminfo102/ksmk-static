@@ -45,6 +45,7 @@ export function ContactHero() {
             className="text-muted-foreground"
           >
             ما همیشه آماده پاسخگویی به سؤالات شما هستیم
+            اگر موفق به تماس نشدید پیام ارسال کنید در اولین فرصت با شما تماس میگیریم
           </motion.p>
         </div>
 
