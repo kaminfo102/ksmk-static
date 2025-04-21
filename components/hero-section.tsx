@@ -22,7 +22,7 @@ export function HeroSection() {
               <div className="w-full h-auto bg-transparent">
                 <Image
                   src="/kia.png"
-                  alt="آموزشگاه ما"
+                  alt="آموزشگاه کودکان هوشمند کردستان"
                   width={800}
                   height={600}
                   className="w-full h-auto object-contain"
@@ -33,6 +33,7 @@ export function HeroSection() {
                   }}
                 />
               </div>
+              
             </div>
             
             {/* Decorative elements */}
@@ -63,8 +64,41 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
+               
               جشنواره و مسابقات آنلاین استانی محاسبات ذهنی با چرتکه
             </motion.h1>
+            {/* <div className="flex justify-center items-center">
+            <Image
+                      src={"/kordestan-map.png"}
+                      alt={"لوگوی استان کردستان"}
+                      width={500}
+                      height={400}
+                      className="rounded-lg justify-center"
+                      style={{ 
+                        backgroundColor: 'transparent',
+                        // mixBlendMode: 'multiply'
+                      }}
+                    />
+            </div> */}
+             <div className="relative w-full h-auto overflow-hidden">
+              <div className="w-full h-auto bg-transparent">
+                <Image
+                  src="/kurdestan-map.png"
+                  alt="آموزشگاه کودکان هوشمند کردستان"
+                  width={700}
+                  height={500}
+                  className="w-full h-auto object-contain"
+                  priority
+                  style={{ 
+                    backgroundColor: 'transparent',
+                    // mixBlendMode: 'multiply'
+                  }}
+                />
+              </div>
+              
+            </div>
+           
+           
             
             <motion.p 
               className="text-muted-foreground mb-6 text-base md:text-lg"

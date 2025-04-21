@@ -22,18 +22,26 @@ export function Footer() {
             className="text-right"
             style={{ direction: 'rtl' }}
           >
-            <Link href="/" className="block mb-6 ml-auto w-fit group">
-              <div className="relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
-                <Image
-                  src="/images/logo/logo.jpg"
-                  alt="Logo"
-                  width={120}
-                  height={120}
-                  className="rounded-lg"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            </Link>
+            <div className="flex gap-4">
+              {[
+                { src: "/images/logo/logo.jpg", alt: "لوگوی استان کردستان" },
+                { src: "/images/logo/logo-iranskids.jpg", alt: "لوگوی اصلی موسسه" },
+                { src: "/images/logo/logo-pama.jpg", alt: "لوگوی پاما" }
+              ].map((logo, index) => (
+                <div key={index} className="group cursor-pointer">
+                  <div className="relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={100}
+                      height={100}
+                      className="rounded-lg"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
             <p className="text-muted-foreground leading-relaxed text-right">
             محاسبات ذهنی یک شکل از آموزش است که به منظور توانمند سازی کودک برای انجام محاسبات، بدون استفاده از هرگونه ابزاری مانند ماشین حساب و… می باشد.
             </p>
