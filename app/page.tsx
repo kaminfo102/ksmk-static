@@ -30,6 +30,7 @@ export default function Home() {
       
       <FAQSection />
       <ImageGallery />
+      
       <ContactSection />
       <PromotionDialog />
       

@@ -65,6 +65,7 @@ export function Navbar() {
 
           <div className="flex items-center md:mr-auto md:flex-row md:gap-4">
             <ThemeToggle />
+            
           </div>
         </div>
       </div>
