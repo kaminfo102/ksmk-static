@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Home, BookOpen, GalleryVerticalEnd, Info, Phone } from "lucide-react";
+import { Menu, X, Home, BookOpen, GalleryVerticalEnd, Info, Phone, Handshake } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,6 +13,7 @@ const menuItems = [
   { title: "دوره‌ها", href: "./courses", icon: <BookOpen className="h-5 w-5 text-primary/80 group-hover:text-primary transition-colors" /> },
   { title: "گالری", href: "./gallery", icon: <GalleryVerticalEnd className="h-5 w-5 text-primary/80 group-hover:text-primary transition-colors" /> },
   { title: "درباره ما", href: "./about", icon: <Info className="h-5 w-5 text-primary/80 group-hover:text-primary transition-colors" /> },
+  // { title: "همکاری با ما", href: "./cooperation", icon: <Handshake className="h-5 w-5 text-primary/80 group-hover:text-primary transition-colors" /> },
   { title: "تماس با ما", href: "./contact", icon: <Phone className="h-5 w-5 text-primary/80 group-hover:text-primary transition-colors" /> },
 ];
 
@@ -64,8 +65,17 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center md:mr-auto md:flex-row md:gap-4">
+           <Link 
+              href="/cooperation" 
+              className="flex flex-col items-center gap-1 text-sm font-medium hover:text-primary transition-all group"
+            >
+              <Handshake className="h-6 w-6 text-primary/80 group-hover:text-primary transition-colors" />
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
+                همکاری با ما
+              </span>
+            </Link>
             <ThemeToggle />
-            
+           
           </div>
         </div>
       </div>
