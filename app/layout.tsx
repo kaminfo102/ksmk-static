@@ -6,6 +6,7 @@ import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/sonner';
 import { GoogleAnalytics } from "@/components/google-analytics"
+import { Analytics } from "@vercel/analytics/react"
 import { cn } from "@/lib/utils"
 
 const vazirmatn = Vazirmatn({ subsets: ['arabic'] });
@@ -28,6 +29,7 @@ export default function RootLayout({
           '--primary-rgb': '220, 38, 38',
         } as any}
       >
+        <Analytics/>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
