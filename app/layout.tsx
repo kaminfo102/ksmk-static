@@ -9,8 +9,8 @@ import { Toaster } from '@/components/ui/sonner';
 const vazirmatn = Vazirmatn({ subsets: ['arabic'] });
 
 export const metadata: Metadata = {
-  title: 'آموزشگاه ما',
-  description: 'آموزشگاه حرفه‌ای برنامه‌نویسی و طراحی وب',
+  title: 'کودکان هوشمند کردستان | آموزش محاسبات ذهنی با چرتکه',
+  description: 'آموزش محاسبات ذهنی با چرتکه، برنامه نویسی رباتیک و اینترنت اشیاء',
 };
 
 export default function RootLayout({
