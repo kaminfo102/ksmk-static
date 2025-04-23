@@ -5,6 +5,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/sonner';
+import { GoogleAnalytics } from "@/components/google-analytics"
+import { cn } from "@/lib/utils"
 
 const vazirmatn = Vazirmatn({ subsets: ['arabic'] });
 
@@ -32,6 +34,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <GoogleAnalytics />
           <div className="relative mt-10">
             <div className="fixed inset-0 -z-10 bg-[radial-gradient(45%_45%_at_50%_50%,hsl(var(--primary)/0.1)_0%,transparent_100%)]" />
             <Navbar />
