@@ -71,6 +71,7 @@ const kurdistanCities = [
 export function FestivalRegistrationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const isRegistrationClosed = true; // وضعیت بسته بودن ثبت‌نام
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -155,7 +156,16 @@ export function FestivalRegistrationForm() {
   }
 
   return (
-    <div className="bg-card rounded-lg p-6 shadow-lg">
+    <div className="bg-card rounded-lg p-6 shadow-lg relative">
+      {isRegistrationClosed && (
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-10 rounded-lg">
+          <div className="text-center p-6">
+            <h3 className="text-2xl font-bold text-destructive mb-2">مهلت ثبت‌نام به اتمام رسید</h3>
+            <p className="text-muted-foreground">متأسفانه مهلت ثبت‌نام در این دوره از مسابقات به پایان رسیده است.</p>
+          </div>
+        </div>
+      )}
+      
       <h2 className="text-2xl font-bold mb-6 text-center">فرم ثبت‌نام در مسابقه</h2>
       
       <Form {...form}>
@@ -303,7 +313,7 @@ export function FestivalRegistrationForm() {
               type="submit" 
               size="lg"
               className="w-full md:w-auto px-8" 
-              disabled={isSubmitting}
+              disabled={isSubmitting || isRegistrationClosed}
             >
               {isSubmitting ? "در حال ثبت‌نام..." : "ثبت‌نام در مسابقه"}
             </Button>
